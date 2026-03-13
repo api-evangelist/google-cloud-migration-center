@@ -1,0 +1,558 @@
+openapi: 3.1.0
+info:
+  title: Google Migration Center API
+  description: >-
+    The Migration Center API provides programmatic access to Google Cloud
+    Migration Center for discovering, assessing, and planning migrations of
+    on-premises infrastructure to Google Cloud. It enables management of assets,
+    groups, import jobs, discovery clients, preference sets, and export jobs
+    to support automated migration planning workflows.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/migration-center/docs
+  termsOfService: https://cloud.google.com/terms
+externalDocs:
+  description: Migration Center API Documentation
+  url: https://cloud.google.com/migration-center/docs/reference/rest
+servers:
+  - url: https://migrationcenter.googleapis.com/v1
+    description: Production Server
+tags:
+  - name: Assets
+    description: Operations for managing discovered infrastructure assets
+  - name: Groups
+    description: Operations for organizing assets into groups
+  - name: ImportJobs
+    description: Operations for importing asset data from external sources
+  - name: DiscoveryClients
+    description: Operations for managing discovery client agents
+  - name: PreferenceSets
+    description: Operations for managing migration preference configurations
+  - name: ExportJobs
+    description: Operations for exporting asset and assessment data
+  - name: Operations
+    description: Operations for managing long-running operations
+security:
+  - oauth2: []
+paths:
+  /projects/{projectId}/locations/{location}/assets:
+    get:
+      operationId: listAssets
+      summary: List assets
+      description: Lists all assets in the specified project and location.
+      tags:
+        - Assets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the project
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The location of the assets
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+          description: Maximum number of assets to return
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+          description: Page token for pagination
+        - name: filter
+          in: query
+          schema:
+            type: string
+          description: Filter expression for assets
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAssetsResponse'
+  /projects/{projectId}/locations/{location}/assets/{assetId}:
+    get:
+      operationId: getAsset
+      summary: Get an asset
+      description: Gets the details of a single asset.
+      tags:
+        - Assets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asset'
+    patch:
+      operationId: updateAsset
+      summary: Update an asset
+      description: Updates the parameters of a single asset.
+      tags:
+        - Assets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
+          description: Field mask for partial update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asset'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asset'
+    delete:
+      operationId: deleteAsset
+      summary: Delete an asset
+      description: Deletes a single asset.
+      tags:
+        - Assets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /projects/{projectId}/locations/{location}/groups:
+    get:
+      operationId: listGroups
+      summary: List groups
+      description: Lists all groups in the specified project and location.
+      tags:
+        - Groups
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGroupsResponse'
+    post:
+      operationId: createGroup
+      summary: Create a group
+      description: Creates a new group in the specified project and location.
+      tags:
+        - Groups
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: groupId
+          in: query
+          schema:
+            type: string
+          description: The ID to use for the group
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/importJobs:
+    get:
+      operationId: listImportJobs
+      summary: List import jobs
+      description: Lists all import jobs in the specified project and location.
+      tags:
+        - ImportJobs
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListImportJobsResponse'
+    post:
+      operationId: createImportJob
+      summary: Create an import job
+      description: Creates a new import job.
+      tags:
+        - ImportJobs
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImportJob'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/preferenceSets:
+    get:
+      operationId: listPreferenceSets
+      summary: List preference sets
+      description: Lists all preference sets in the specified project and location.
+      tags:
+        - PreferenceSets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPreferenceSetsResponse'
+    post:
+      operationId: createPreferenceSet
+      summary: Create a preference set
+      description: Creates a new preference set for migration planning.
+      tags:
+        - PreferenceSets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PreferenceSet'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud resources
+  schemas:
+    Asset:
+      type: object
+      description: An asset represents a resource in a customer environment.
+      properties:
+        name:
+          type: string
+          description: Output only. The full resource name of the asset.
+        createTime:
+          type: string
+          format: date-time
+          description: Output only. The timestamp when the asset was created.
+        updateTime:
+          type: string
+          format: date-time
+          description: Output only. The timestamp when the asset was last updated.
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+          description: Labels applied to the asset.
+        machineDetails:
+          $ref: '#/components/schemas/MachineDetails'
+        attributes:
+          type: object
+          additionalProperties:
+            type: string
+          description: Generic asset attributes.
+    MachineDetails:
+      type: object
+      description: Details of a machine asset.
+      properties:
+        uuid:
+          type: string
+          description: Machine unique identifier.
+        machineName:
+          type: string
+          description: Machine name.
+        coreCount:
+          type: integer
+          description: Number of CPU cores.
+        memoryMb:
+          type: integer
+          description: Memory size in megabytes.
+        diskCount:
+          type: integer
+          description: Number of disks.
+        totalDiskSizeGb:
+          type: integer
+          description: Total disk size in gigabytes.
+        platform:
+          type: string
+          description: Platform information.
+    Group:
+      type: object
+      description: A group organizes a collection of assets for migration planning.
+      properties:
+        name:
+          type: string
+          description: Output only. The full resource name.
+        displayName:
+          type: string
+          description: User-friendly display name.
+        description:
+          type: string
+          description: Description of the group.
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+    ImportJob:
+      type: object
+      description: An import job represents a data import operation.
+      properties:
+        name:
+          type: string
+          description: Output only. The full resource name.
+        displayName:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - PENDING
+            - RUNNING
+            - COMPLETED
+            - FAILED
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+    PreferenceSet:
+      type: object
+      description: A set of preferences for migration planning.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        virtualMachinePreferences:
+          type: object
+          description: Preferences for virtual machine migration targets.
+          properties:
+            targetProduct:
+              type: string
+              enum:
+                - COMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED
+                - COMPUTE_ENGINE
+                - VMWARE_ENGINE
+                - SOLE_TENANCY
+            commitmentPlan:
+              type: string
+              enum:
+                - COMMITMENT_PLAN_UNSPECIFIED
+                - NONE
+                - ONE_YEAR
+                - THREE_YEARS
+            sizingOptimizationStrategy:
+              type: string
+              enum:
+                - SIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED
+                - SAME_AS_SOURCE
+                - MODERATE
+                - AGGRESSIVE
+    Operation:
+      type: object
+      description: A long-running operation.
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+    ListAssetsResponse:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Asset'
+        nextPageToken:
+          type: string
+    ListGroupsResponse:
+      type: object
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        nextPageToken:
+          type: string
+    ListImportJobsResponse:
+      type: object
+      properties:
+        importJobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImportJob'
+        nextPageToken:
+          type: string
+    ListPreferenceSetsResponse:
+      type: object
+      properties:
+        preferenceSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreferenceSet'
+        nextPageToken:
+          type: string

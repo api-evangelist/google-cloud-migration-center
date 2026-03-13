@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cloud.google.com/schemas/migrationcenter/asset.json",
+  "title": "Google Cloud Migration Center Asset",
+  "description": "Schema for a Migration Center asset representing a discovered infrastructure resource in a customer environment.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The full resource name of the asset"
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the asset was created"
+    },
+    "updateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the asset was last updated"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Labels applied to the asset"
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Generic asset attributes"
+    },
+    "machineDetails": {
+      "$ref": "#/$defs/MachineDetails",
+      "description": "Details of the machine if the asset is a machine"
+    },
+    "assignedGroups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Groups the asset is assigned to"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The sources that contributed to this asset"
+    }
+  },
+  "$defs": {
+    "MachineDetails": {
+      "type": "object",
+      "description": "Details of a machine asset including hardware and software information",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "description": "Machine unique identifier"
+        },
+        "machineName": {
+          "type": "string",
+          "description": "Machine name"
+        },
+        "coreCount": {
+          "type": "integer",
+          "description": "Number of CPU cores",
+          "minimum": 0
+        },
+        "memoryMb": {
+          "type": "integer",
+          "description": "Memory size in megabytes",
+          "minimum": 0
+        },
+        "diskCount": {
+          "type": "integer",
+          "description": "Number of disks",
+          "minimum": 0
+        },
+        "totalDiskSizeGb": {
+          "type": "integer",
+          "description": "Total disk size in gigabytes",
+          "minimum": 0
+        },
+        "platform": {
+          "type": "string",
+          "description": "Platform information for the machine"
+        },
+        "powerState": {
+          "type": "string",
+          "description": "Power state of the machine",
+          "enum": ["POWER_STATE_UNSPECIFIED", "PENDING", "ACTIVE", "SUSPENDING", "SUSPENDED", "DELETING", "DELETED"]
+        },
+        "networkAdapters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NetworkAdapter"
+          },
+          "description": "Network adapters attached to the machine"
+        },
+        "guestOs": {
+          "$ref": "#/$defs/GuestOsDetails",
+          "description": "Guest operating system information"
+        }
+      }
+    },
+    "NetworkAdapter": {
+      "type": "object",
+      "description": "A network adapter on a machine",
+      "properties": {
+        "adapterType": {
+          "type": "string",
+          "description": "Network adapter type"
+        },
+        "macAddress": {
+          "type": "string",
+          "description": "MAC address of the adapter"
+        },
+        "ipAddresses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "IP addresses assigned to the adapter"
+        }
+      }
+    },
+    "GuestOsDetails": {
+      "type": "object",
+      "description": "Guest operating system details",
+      "properties": {
+        "osName": {
+          "type": "string",
+          "description": "Operating system name"
+        },
+        "family": {
+          "type": "string",
+          "description": "OS family (e.g., LINUX, WINDOWS)"
+        },
+        "version": {
+          "type": "string",
+          "description": "Operating system version"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "mc": "https://cloud.google.com/migration-center/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Asset": {
+      "@id": "mc:Asset",
+      "@context": {
+        "name": "schema:name",
+        "description": "schema:description",
+        "machineName": "mc:machineName",
+        "platform": "mc:platform",
+        "coreCount": "mc:coreCount",
+        "memoryMb": "mc:memoryMb",
+        "totalDiskSizeGb": "mc:totalDiskSizeGb",
+        "labels": "mc:labels",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "updateTime": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Group": {
+      "@id": "mc:Group",
+      "@context": {
+        "displayName": "schema:name",
+        "description": "schema:description",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "updateTime": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        },
+        "labels": "mc:labels"
+      }
+    },
+
+    "ImportJob": {
+      "@id": "mc:ImportJob",
+      "@context": {
+        "displayName": "schema:name",
+        "state": "mc:jobState",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "updateTime": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "PreferenceSet": {
+      "@id": "mc:PreferenceSet",
+      "@context": {
+        "displayName": "schema:name",
+        "description": "schema:description",
+        "targetProduct": "mc:targetProduct",
+        "commitmentPlan": "mc:commitmentPlan",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}
