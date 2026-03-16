@@ -1,3 +1,4 @@
+aid: google-cloud-migration-center
 name: Google Cloud Migration Center
 description: >-
   Google Cloud Migration Center is a unified platform that helps accelerate
@@ -8,8 +9,9 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-migration-center/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
 - Migration
 - Cloud Migration
@@ -40,13 +42,31 @@ apis:
     url: https://cloud.google.com/migration-center/docs/reference/rest
   - type: OpenAPI
     url: openapi/migration-center-api-openapi.yml
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: Getting Started
+    url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
   - type: JSONSchema
     url: json-schema/google-cloud-migration-center-asset-schema.json
 common:
-- type: GettingStarted
+- type: Portal
+  url: https://cloud.google.com/migration-center
+- type: Getting Started
   url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
+- type: Documentation
+  url: https://cloud.google.com/migration-center/docs
+- type: Authentication
+  url: https://cloud.google.com/docs/authentication
 - type: Pricing
   url: https://cloud.google.com/migration-center/pricing
+- type: Terms of Service
+  url: https://cloud.google.com/terms
+- type: Privacy Policy
+  url: https://policies.google.com/privacy
+- type: Status
+  url: https://status.cloud.google.com/
+- type: Support
+  url: https://cloud.google.com/migration-center/docs/support
 - type: JSON-LD
   url: json-ld/google-cloud-migration-center-context.jsonld
 maintainers:
