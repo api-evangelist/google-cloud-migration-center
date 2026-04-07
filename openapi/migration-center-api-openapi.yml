@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Google Migration Center API
+  title: Google Cloud Migration Center Google Migration Center API
   description: >-
     The Migration Center API provides programmatic access to Google Cloud
     Migration Center for discovering, assessing, and planning migrations of
@@ -39,7 +39,7 @@ paths:
   /projects/{projectId}/locations/{location}/assets:
     get:
       operationId: listAssets
-      summary: List assets
+      summary: Google Cloud Migration Center List assets
       description: Lists all assets in the specified project and location.
       tags:
         - Assets
@@ -81,7 +81,7 @@ paths:
   /projects/{projectId}/locations/{location}/assets/{assetId}:
     get:
       operationId: getAsset
-      summary: Get an asset
+      summary: Google Cloud Migration Center Get an asset
       description: Gets the details of a single asset.
       tags:
         - Assets
@@ -110,7 +110,7 @@ paths:
                 $ref: '#/components/schemas/Asset'
     patch:
       operationId: updateAsset
-      summary: Update an asset
+      summary: Google Cloud Migration Center Update an asset
       description: Updates the parameters of a single asset.
       tags:
         - Assets
@@ -150,7 +150,7 @@ paths:
                 $ref: '#/components/schemas/Asset'
     delete:
       operationId: deleteAsset
-      summary: Delete an asset
+      summary: Google Cloud Migration Center Delete an asset
       description: Deletes a single asset.
       tags:
         - Assets
@@ -176,7 +176,7 @@ paths:
   /projects/{projectId}/locations/{location}/groups:
     get:
       operationId: listGroups
-      summary: List groups
+      summary: Google Cloud Migration Center List groups
       description: Lists all groups in the specified project and location.
       tags:
         - Groups
@@ -208,7 +208,7 @@ paths:
                 $ref: '#/components/schemas/ListGroupsResponse'
     post:
       operationId: createGroup
-      summary: Create a group
+      summary: Google Cloud Migration Center Create a group
       description: Creates a new group in the specified project and location.
       tags:
         - Groups
@@ -244,7 +244,7 @@ paths:
   /projects/{projectId}/locations/{location}/importJobs:
     get:
       operationId: listImportJobs
-      summary: List import jobs
+      summary: Google Cloud Migration Center List import jobs
       description: Lists all import jobs in the specified project and location.
       tags:
         - ImportJobs
@@ -268,7 +268,7 @@ paths:
                 $ref: '#/components/schemas/ListImportJobsResponse'
     post:
       operationId: createImportJob
-      summary: Create an import job
+      summary: Google Cloud Migration Center Create an import job
       description: Creates a new import job.
       tags:
         - ImportJobs
@@ -299,7 +299,7 @@ paths:
   /projects/{projectId}/locations/{location}/preferenceSets:
     get:
       operationId: listPreferenceSets
-      summary: List preference sets
+      summary: Google Cloud Migration Center List preference sets
       description: Lists all preference sets in the specified project and location.
       tags:
         - PreferenceSets
@@ -323,7 +323,7 @@ paths:
                 $ref: '#/components/schemas/ListPreferenceSetsResponse'
     post:
       operationId: createPreferenceSet
-      summary: Create a preference set
+      summary: Google Cloud Migration Center Create a preference set
       description: Creates a new preference set for migration planning.
       tags:
         - PreferenceSets
