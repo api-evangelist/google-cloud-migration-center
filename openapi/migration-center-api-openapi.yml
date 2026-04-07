@@ -25,14 +25,8 @@ tags:
     description: Operations for organizing assets into groups
   - name: ImportJobs
     description: Operations for importing asset data from external sources
-  - name: DiscoveryClients
-    description: Operations for managing discovery client agents
   - name: PreferenceSets
     description: Operations for managing migration preference configurations
-  - name: ExportJobs
-    description: Operations for exporting asset and assessment data
-  - name: Operations
-    description: Operations for managing long-running operations
 security:
   - oauth2: []
 paths:
