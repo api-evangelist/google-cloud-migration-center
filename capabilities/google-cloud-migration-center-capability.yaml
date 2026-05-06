@@ -1,0 +1,661 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Migration Center Google Migration Center API
+  description: The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing,
+    and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import
+    jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.
+  tags:
+  - Google
+  - Cloud
+  - Migration
+  - Center
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-migration-center
+    baseUri: https://migrationcenter.googleapis.com/v1
+    description: Google Cloud Migration Center Google Migration Center API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_MIGRATION_CENTER_TOKEN}}'
+    resources:
+    - name: projects-projectid-locations-location-assets
+      path: /projects/{projectId}/locations/{location}/assets
+      operations:
+      - name: listassets
+        method: GET
+        description: Google Cloud Migration Center List assets
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+          description: The ID of the project
+        - name: location
+          in: path
+          type: string
+          required: true
+          description: The location of the assets
+        - name: pageSize
+          in: query
+          type: integer
+          description: Maximum number of assets to return
+        - name: pageToken
+          in: query
+          type: string
+          description: Page token for pagination
+        - name: filter
+          in: query
+          type: string
+          description: Filter expression for assets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-assets-ass
+      path: /projects/{projectId}/locations/{location}/assets/{assetId}
+      operations:
+      - name: getasset
+        method: GET
+        description: Google Cloud Migration Center Get an asset
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateasset
+        method: PATCH
+        description: Google Cloud Migration Center Update an asset
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+          description: Field mask for partial update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteasset
+        method: DELETE
+        description: Google Cloud Migration Center Delete an asset
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-groups
+      path: /projects/{projectId}/locations/{location}/groups
+      operations:
+      - name: listgroups
+        method: GET
+        description: Google Cloud Migration Center List groups
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: creategroup
+        method: POST
+        description: Google Cloud Migration Center Create a group
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: groupId
+          in: query
+          type: string
+          description: The ID to use for the group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-importjobs
+      path: /projects/{projectId}/locations/{location}/importJobs
+      operations:
+      - name: listimportjobs
+        method: GET
+        description: Google Cloud Migration Center List import jobs
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createimportjob
+        method: POST
+        description: Google Cloud Migration Center Create an import job
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-preference
+      path: /projects/{projectId}/locations/{location}/preferenceSets
+      operations:
+      - name: listpreferencesets
+        method: GET
+        description: Google Cloud Migration Center List preference sets
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createpreferenceset
+        method: POST
+        description: Google Cloud Migration Center Create a preference set
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-migration-center-rest
+    description: REST adapter for Google Cloud Migration Center Google Migration Center API.
+    resources:
+    - path: /projects/{projectId}/locations/{location}/assets
+      name: listassets
+      operations:
+      - method: GET
+        name: listassets
+        description: Google Cloud Migration Center List assets
+        call: google-cloud-migration-center.listassets
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/assets/{assetId}
+      name: getasset
+      operations:
+      - method: GET
+        name: getasset
+        description: Google Cloud Migration Center Get an asset
+        call: google-cloud-migration-center.getasset
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          assetId: rest.assetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/assets/{assetId}
+      name: updateasset
+      operations:
+      - method: PATCH
+        name: updateasset
+        description: Google Cloud Migration Center Update an asset
+        call: google-cloud-migration-center.updateasset
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          assetId: rest.assetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/assets/{assetId}
+      name: deleteasset
+      operations:
+      - method: DELETE
+        name: deleteasset
+        description: Google Cloud Migration Center Delete an asset
+        call: google-cloud-migration-center.deleteasset
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          assetId: rest.assetId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/groups
+      name: listgroups
+      operations:
+      - method: GET
+        name: listgroups
+        description: Google Cloud Migration Center List groups
+        call: google-cloud-migration-center.listgroups
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/groups
+      name: creategroup
+      operations:
+      - method: POST
+        name: creategroup
+        description: Google Cloud Migration Center Create a group
+        call: google-cloud-migration-center.creategroup
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/importJobs
+      name: listimportjobs
+      operations:
+      - method: GET
+        name: listimportjobs
+        description: Google Cloud Migration Center List import jobs
+        call: google-cloud-migration-center.listimportjobs
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/importJobs
+      name: createimportjob
+      operations:
+      - method: POST
+        name: createimportjob
+        description: Google Cloud Migration Center Create an import job
+        call: google-cloud-migration-center.createimportjob
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/preferenceSets
+      name: listpreferencesets
+      operations:
+      - method: GET
+        name: listpreferencesets
+        description: Google Cloud Migration Center List preference sets
+        call: google-cloud-migration-center.listpreferencesets
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/preferenceSets
+      name: createpreferenceset
+      operations:
+      - method: POST
+        name: createpreferenceset
+        description: Google Cloud Migration Center Create a preference set
+        call: google-cloud-migration-center.createpreferenceset
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-migration-center-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Migration Center Google Migration Center API for AI agent use.
+    tools:
+    - name: listassets
+      description: Google Cloud Migration Center List assets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-migration-center.listassets
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        filter: tools.filter
+      inputParameters:
+      - name: projectId
+        type: string
+        description: The ID of the project
+        required: true
+      - name: location
+        type: string
+        description: The location of the assets
+        required: true
+      - name: pageSize
+        type: integer
+        description: Maximum number of assets to return
+      - name: pageToken
+        type: string
+        description: Page token for pagination
+      - name: filter
+        type: string
+        description: Filter expression for assets
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getasset
+      description: Google Cloud Migration Center Get an asset
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-migration-center.getasset
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        assetId: tools.assetId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: assetId
+        type: string
+        description: assetId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateasset
+      description: Google Cloud Migration Center Update an asset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-migration-center.updateasset
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        assetId: tools.assetId
+        updateMask: tools.updateMask
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: assetId
+        type: string
+        description: assetId
+        required: true
+      - name: updateMask
+        type: string
+        description: Field mask for partial update
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteasset
+      description: Google Cloud Migration Center Delete an asset
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-migration-center.deleteasset
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        assetId: tools.assetId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: assetId
+        type: string
+        description: assetId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listgroups
+      description: Google Cloud Migration Center List groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-migration-center.listgroups
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creategroup
+      description: Google Cloud Migration Center Create a group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-migration-center.creategroup
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        groupId: tools.groupId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: groupId
+        type: string
+        description: The ID to use for the group
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listimportjobs
+      description: Google Cloud Migration Center List import jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-migration-center.listimportjobs
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createimportjob
+      description: Google Cloud Migration Center Create an import job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-migration-center.createimportjob
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listpreferencesets
+      description: Google Cloud Migration Center List preference sets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-migration-center.listpreferencesets
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createpreferenceset
+      description: Google Cloud Migration Center Create a preference set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-migration-center.createpreferenceset
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_MIGRATION_CENTER_TOKEN: GOOGLE_CLOUD_MIGRATION_CENTER_TOKEN
