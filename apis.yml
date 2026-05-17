@@ -44,14 +44,14 @@ apis:
         url: openapi/migration-center-api-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
       - type: JSONSchema
         url: json-schema/google-cloud-migration-center-asset-schema.json
 common:
   - type: Portal
     url: https://cloud.google.com/migration-center
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
   - type: Documentation
     url: https://cloud.google.com/migration-center/docs
@@ -59,15 +59,15 @@ common:
     url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/migration-center/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/migration-center/docs/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/google-cloud-migration-center-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
