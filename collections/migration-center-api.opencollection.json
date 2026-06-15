@@ -1,0 +1,357 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Migration Center Google Migration Center API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Migration Center List assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/assets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the project"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path",
+                "description": "The location of the assets"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of assets to return"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Page token for pagination"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression for assets"
+              }
+            ]
+          },
+          "docs": "Lists all assets in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Get an asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/assets/:assetId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the details of a single asset."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Update an asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/assets/:assetId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query",
+                "description": "Field mask for partial update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the parameters of a single asset."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Delete an asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/assets/:assetId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a single asset."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Migration Center List groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/groups",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists all groups in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Create a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/groups",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "query",
+                "description": "The ID to use for the group"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new group in the specified project and location."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ImportJobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Migration Center List import jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/importJobs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all import jobs in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Create an import job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/importJobs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new import job."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "PreferenceSets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Migration Center List preference sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/preferenceSets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all preference sets in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Create a preference set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/preferenceSets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new preference set for migration planning."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
