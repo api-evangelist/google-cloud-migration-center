@@ -4,7 +4,7 @@ description: >-
   Google Cloud Migration Center is a unified platform that helps accelerate end-to-end cloud migration journeys from
   on-premises or other cloud environments to Google Cloud. It provides discovery, assessment, and planning tools to help
   organizations understand their existing infrastructure and plan optimal migration strategies.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-migration-center/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -24,7 +24,7 @@ apis:
       and planning migrations of on-premises infrastructure to Google Cloud. Developers can use the API to manage
       assets, groups, import jobs, discovery clients, preference sets, and export jobs. The API enables automated
       infrastructure assessment, cost estimation, and migration planning workflows.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/migration-center/docs
     baseURL: https://migrationcenter.googleapis.com
     tags:
