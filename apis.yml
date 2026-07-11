@@ -45,6 +45,12 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-migration-center-asset-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-migration-center-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-migration-center-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-migration-center-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-migration-center-scopes.yml
   - type: GitHubOrganization
