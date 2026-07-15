@@ -45,6 +45,8 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-migration-center-asset-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-migration-center-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-migration-center-vulnerability-disclosure.yml
   - type: DomainSecurity
