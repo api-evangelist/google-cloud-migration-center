@@ -1,0 +1,324 @@
+{
+  "info": {
+    "_postman_id": "0897ff67-6ad2-4d5b-b632-8c5bf43757b5",
+    "name": "Google Cloud Migration Center Google Migration Center Assets PreferenceSets API",
+    "description": "The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:04.000Z",
+    "updatedAt": "2026-07-28T01:48:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0897ff67-6ad2-4d5b-b632-8c5bf43757b5"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "preferenceSets",
+                      "item": [
+                        {
+                          "name": "Google Cloud Migration Center List preference sets",
+                          "id": "d98771ff-009d-41d4-a288-ee986a88c2f5",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/preferenceSets",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "preferenceSets"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "fb888090-b8d3-431c-986f-499d91e1f4cd",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "9c2afe7b-d6ca-47d6-a1a1-b6363a3e7dc4",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists all preference sets in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "b15c9180-4f5c-4791-bda7-2b9a6be2ea28",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/preferenceSets",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "preferenceSets"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"preferenceSets\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"virtualMachinePreferences\": {\n        \"targetProduct\": \"COMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED\",\n        \"commitmentPlan\": \"NONE\",\n        \"sizingOptimizationStrategy\": \"SAME_AS_SOURCE\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"virtualMachinePreferences\": {\n        \"targetProduct\": \"COMPUTE_ENGINE\",\n        \"commitmentPlan\": \"ONE_YEAR\",\n        \"sizingOptimizationStrategy\": \"SIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:48:05.000Z",
+                              "updatedAt": "2026-07-28T01:48:05.000Z",
+                              "uid": "35240-b15c9180-4f5c-4791-bda7-2b9a6be2ea28"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:05.000Z",
+                          "updatedAt": "2026-07-28T01:48:05.000Z",
+                          "uid": "35240-d98771ff-009d-41d4-a288-ee986a88c2f5"
+                        },
+                        {
+                          "name": "Google Cloud Migration Center Create a preference set",
+                          "id": "e559fb5f-f4ec-4d00-82a9-0654205138b5",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"virtualMachinePreferences\": {\n    \"targetProduct\": \"SOLE_TENANCY\",\n    \"commitmentPlan\": \"THREE_YEARS\",\n    \"sizingOptimizationStrategy\": \"MODERATE\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/preferenceSets",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "preferenceSets"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "5183dec8-21a0-406e-9d5c-b0c1f118d79e",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "d209cea6-5e70-464f-8280-4504bfbb127c",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new preference set for migration planning."
+                          },
+                          "response": [
+                            {
+                              "id": "6c3cde28-07d4-48b5-ae6d-f960cbd4cef8",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"virtualMachinePreferences\": {\n    \"targetProduct\": \"SOLE_TENANCY\",\n    \"commitmentPlan\": \"THREE_YEARS\",\n    \"sizingOptimizationStrategy\": \"MODERATE\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/preferenceSets",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "preferenceSets"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:48:05.000Z",
+                              "updatedAt": "2026-07-28T01:48:05.000Z",
+                              "uid": "35240-6c3cde28-07d4-48b5-ae6d-f960cbd4cef8"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:05.000Z",
+                          "updatedAt": "2026-07-28T01:48:05.000Z",
+                          "uid": "35240-e559fb5f-f4ec-4d00-82a9-0654205138b5"
+                        }
+                      ],
+                      "id": "7692d50c-ec96-4a85-8c69-e4677504caa2",
+                      "createdAt": "2026-07-28T01:48:04.000Z",
+                      "updatedAt": "2026-07-28T01:48:04.000Z",
+                      "uid": "35240-7692d50c-ec96-4a85-8c69-e4677504caa2"
+                    }
+                  ],
+                  "id": "01e8e692-7174-4e10-a276-216989499fb5",
+                  "createdAt": "2026-07-28T01:48:04.000Z",
+                  "updatedAt": "2026-07-28T01:48:04.000Z",
+                  "uid": "35240-01e8e692-7174-4e10-a276-216989499fb5"
+                }
+              ],
+              "id": "d2e4eba4-2985-4215-8cd1-1b01d6ba632d",
+              "createdAt": "2026-07-28T01:48:04.000Z",
+              "updatedAt": "2026-07-28T01:48:04.000Z",
+              "uid": "35240-d2e4eba4-2985-4215-8cd1-1b01d6ba632d"
+            }
+          ],
+          "id": "4bc1c9b3-f79d-43da-a68a-71af83e11218",
+          "createdAt": "2026-07-28T01:48:04.000Z",
+          "updatedAt": "2026-07-28T01:48:04.000Z",
+          "uid": "35240-4bc1c9b3-f79d-43da-a68a-71af83e11218"
+        }
+      ],
+      "id": "b6a84f31-7a7f-46c2-89b2-918bb32d90f1",
+      "createdAt": "2026-07-28T01:48:04.000Z",
+      "updatedAt": "2026-07-28T01:48:04.000Z",
+      "uid": "35240-b6a84f31-7a7f-46c2-89b2-918bb32d90f1"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://migrationcenter.googleapis.com/v1"
+    }
+  ]
+}

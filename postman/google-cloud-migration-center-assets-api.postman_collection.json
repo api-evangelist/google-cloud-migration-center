@@ -1,0 +1,606 @@
+{
+  "info": {
+    "_postman_id": "7073e3c3-2616-4243-8c03-b344fe1732a4",
+    "name": "Google Cloud Migration Center Google Migration Center Assets API",
+    "description": "The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:59.000Z",
+    "updatedAt": "2026-07-28T01:48:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7073e3c3-2616-4243-8c03-b344fe1732a4"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "assets",
+                      "item": [
+                        {
+                          "name": "{assetId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Migration Center Get an asset",
+                              "id": "75e8a438-3c3c-401a-b714-bd762fbebac0",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets/:assetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "assets",
+                                    ":assetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "33cafc73-5be4-44d4-a42d-cbf040c52df6",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "d27af4e9-e95e-4f02-97d8-5b26a4344c7a",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "8d2401db-0a9e-494a-8518-e9f071f87c65",
+                                      "key": "assetId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets the details of a single asset."
+                              },
+                              "response": [
+                                {
+                                  "id": "5ecf5b84-b70d-4a98-bbf3-d362007c6d8f",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets/:assetId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "assets",
+                                        ":assetId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "assetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"eiusmod_2e\": \"<string>\",\n    \"esse_7_\": \"<string>\"\n  },\n  \"machineDetails\": {\n    \"uuid\": \"<string>\",\n    \"machineName\": \"<string>\",\n    \"coreCount\": \"<integer>\",\n    \"memoryMb\": \"<integer>\",\n    \"diskCount\": \"<integer>\",\n    \"totalDiskSizeGb\": \"<integer>\",\n    \"platform\": \"<string>\"\n  },\n  \"attributes\": {\n    \"fugiat2a5\": \"<string>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T01:48:00.000Z",
+                                  "updatedAt": "2026-07-28T01:48:00.000Z",
+                                  "uid": "35240-5ecf5b84-b70d-4a98-bbf3-d362007c6d8f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:00.000Z",
+                              "updatedAt": "2026-07-28T01:48:00.000Z",
+                              "uid": "35240-75e8a438-3c3c-401a-b714-bd762fbebac0"
+                            },
+                            {
+                              "name": "Google Cloud Migration Center Update an asset",
+                              "id": "777f92bc-17d0-4021-87cf-15f5d296fa5f",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"eiusmod_2e\": \"<string>\",\n    \"esse_7_\": \"<string>\"\n  },\n  \"machineDetails\": {\n    \"uuid\": \"<string>\",\n    \"machineName\": \"<string>\",\n    \"coreCount\": \"<integer>\",\n    \"memoryMb\": \"<integer>\",\n    \"diskCount\": \"<integer>\",\n    \"totalDiskSizeGb\": \"<integer>\",\n    \"platform\": \"<string>\"\n  },\n  \"attributes\": {\n    \"fugiat2a5\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets/:assetId?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "assets",
+                                    ":assetId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Field mask for partial update",
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "6381c0df-5b6c-4920-ac4c-4e4b6eff50a4",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "9e4ceaa7-767b-4714-a041-da0c3fa455b5",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "555b30d1-5d1d-4c36-b909-2ecd4c8dd2e6",
+                                      "key": "assetId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Updates the parameters of a single asset."
+                              },
+                              "response": [
+                                {
+                                  "id": "44536f7a-77e2-47cf-9a06-165046d7647d",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"eiusmod_2e\": \"<string>\",\n    \"esse_7_\": \"<string>\"\n  },\n  \"machineDetails\": {\n    \"uuid\": \"<string>\",\n    \"machineName\": \"<string>\",\n    \"coreCount\": \"<integer>\",\n    \"memoryMb\": \"<integer>\",\n    \"diskCount\": \"<integer>\",\n    \"totalDiskSizeGb\": \"<integer>\",\n    \"platform\": \"<string>\"\n  },\n  \"attributes\": {\n    \"fugiat2a5\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets/:assetId?updateMask=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "assets",
+                                        ":assetId"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "Field mask for partial update",
+                                          "key": "updateMask",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "assetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"eiusmod_2e\": \"<string>\",\n    \"esse_7_\": \"<string>\"\n  },\n  \"machineDetails\": {\n    \"uuid\": \"<string>\",\n    \"machineName\": \"<string>\",\n    \"coreCount\": \"<integer>\",\n    \"memoryMb\": \"<integer>\",\n    \"diskCount\": \"<integer>\",\n    \"totalDiskSizeGb\": \"<integer>\",\n    \"platform\": \"<string>\"\n  },\n  \"attributes\": {\n    \"fugiat2a5\": \"<string>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T01:48:00.000Z",
+                                  "updatedAt": "2026-07-28T01:48:00.000Z",
+                                  "uid": "35240-44536f7a-77e2-47cf-9a06-165046d7647d"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:00.000Z",
+                              "updatedAt": "2026-07-28T01:48:00.000Z",
+                              "uid": "35240-777f92bc-17d0-4021-87cf-15f5d296fa5f"
+                            },
+                            {
+                              "name": "Google Cloud Migration Center Delete an asset",
+                              "id": "7d5496c2-3b5d-4506-90de-66c01ca3c25b",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets/:assetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "assets",
+                                    ":assetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "0f509008-5b95-4645-bd8d-324f1f839f71",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "c27309bb-210d-452c-bd81-d92cd3b930a5",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "788957e2-7f2e-4324-b3c5-bcd8531bce74",
+                                      "key": "assetId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes a single asset."
+                              },
+                              "response": [
+                                {
+                                  "id": "977d5bcd-03f8-47c8-8b61-6daf96484ad7",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets/:assetId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "assets",
+                                        ":assetId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "assetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T01:48:00.000Z",
+                                  "updatedAt": "2026-07-28T01:48:00.000Z",
+                                  "uid": "35240-977d5bcd-03f8-47c8-8b61-6daf96484ad7"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:00.000Z",
+                              "updatedAt": "2026-07-28T01:48:00.000Z",
+                              "uid": "35240-7d5496c2-3b5d-4506-90de-66c01ca3c25b"
+                            }
+                          ],
+                          "id": "6c2924c9-51c0-4f30-a32e-25157e8b18d8",
+                          "createdAt": "2026-07-28T01:48:00.000Z",
+                          "updatedAt": "2026-07-28T01:48:00.000Z",
+                          "uid": "35240-6c2924c9-51c0-4f30-a32e-25157e8b18d8"
+                        },
+                        {
+                          "name": "Google Cloud Migration Center List assets",
+                          "id": "0b8bb0ee-23eb-476e-8291-595a47b593eb",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets?pageSize=<integer>&pageToken=<string>&filter=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "assets"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of assets to return",
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Page token for pagination",
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression for assets",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a067da42-ebac-4d87-acac-222bce67c20c",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) The ID of the project"
+                                },
+                                {
+                                  "id": "cc792f89-8bdd-4ee9-b440-6e42dc1b4e8d",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) The location of the assets"
+                                }
+                              ]
+                            },
+                            "description": "Lists all assets in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "f7445c7f-9c04-496a-b1d8-d1608972316a",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/assets?pageSize=<integer>&pageToken=<string>&filter=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "assets"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Maximum number of assets to return",
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "description": "Page token for pagination",
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Filter expression for assets",
+                                      "key": "filter",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"assets\": [\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"esse5f\": \"<string>\",\n        \"ind\": \"<string>\"\n      },\n      \"machineDetails\": {\n        \"uuid\": \"<string>\",\n        \"machineName\": \"<string>\",\n        \"coreCount\": \"<integer>\",\n        \"memoryMb\": \"<integer>\",\n        \"diskCount\": \"<integer>\",\n        \"totalDiskSizeGb\": \"<integer>\",\n        \"platform\": \"<string>\"\n      },\n      \"attributes\": {\n        \"nulla_bf\": \"<string>\",\n        \"irure_a\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"pariaturbb\": \"<string>\",\n        \"fugiat06b\": \"<string>\"\n      },\n      \"machineDetails\": {\n        \"uuid\": \"<string>\",\n        \"machineName\": \"<string>\",\n        \"coreCount\": \"<integer>\",\n        \"memoryMb\": \"<integer>\",\n        \"diskCount\": \"<integer>\",\n        \"totalDiskSizeGb\": \"<integer>\",\n        \"platform\": \"<string>\"\n      },\n      \"attributes\": {\n        \"voluptate_2c\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:48:00.000Z",
+                              "updatedAt": "2026-07-28T01:48:00.000Z",
+                              "uid": "35240-f7445c7f-9c04-496a-b1d8-d1608972316a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:00.000Z",
+                          "updatedAt": "2026-07-28T01:48:00.000Z",
+                          "uid": "35240-0b8bb0ee-23eb-476e-8291-595a47b593eb"
+                        }
+                      ],
+                      "id": "903220d3-b5fa-4d8b-b28b-1957084b23bb",
+                      "createdAt": "2026-07-28T01:48:00.000Z",
+                      "updatedAt": "2026-07-28T01:48:00.000Z",
+                      "uid": "35240-903220d3-b5fa-4d8b-b28b-1957084b23bb"
+                    }
+                  ],
+                  "id": "53aa5e6a-d4c2-4d0c-aa44-486ece5c4da3",
+                  "createdAt": "2026-07-28T01:48:00.000Z",
+                  "updatedAt": "2026-07-28T01:48:00.000Z",
+                  "uid": "35240-53aa5e6a-d4c2-4d0c-aa44-486ece5c4da3"
+                }
+              ],
+              "id": "8bcc7dc4-2965-4d0f-858b-d47188f39d28",
+              "createdAt": "2026-07-28T01:48:00.000Z",
+              "updatedAt": "2026-07-28T01:48:00.000Z",
+              "uid": "35240-8bcc7dc4-2965-4d0f-858b-d47188f39d28"
+            }
+          ],
+          "id": "b9497890-0b50-4541-b5c9-31d0df13a752",
+          "createdAt": "2026-07-28T01:48:00.000Z",
+          "updatedAt": "2026-07-28T01:48:00.000Z",
+          "uid": "35240-b9497890-0b50-4541-b5c9-31d0df13a752"
+        }
+      ],
+      "id": "0c6dc299-34a0-4e6b-bbaa-92b0ac21c011",
+      "createdAt": "2026-07-28T01:48:00.000Z",
+      "updatedAt": "2026-07-28T01:48:00.000Z",
+      "uid": "35240-0c6dc299-34a0-4e6b-bbaa-92b0ac21c011"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://migrationcenter.googleapis.com/v1"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "info": {
+    "_postman_id": "d549d714-ceab-44e0-92d3-872960461a3c",
+    "name": "Google Cloud Migration Center Google Migration Center Assets Groups API",
+    "description": "The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:00.000Z",
+    "updatedAt": "2026-07-28T01:48:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d549d714-ceab-44e0-92d3-872960461a3c"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "groups",
+                      "item": [
+                        {
+                          "name": "Google Cloud Migration Center List groups",
+                          "id": "bf25e4e0-21d5-4f32-aa10-64939830d663",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/groups?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "groups"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "e00b450c-a78f-45e8-838b-0cbf2549b7eb",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "2d4e2f84-9f49-4657-bff5-d77a026eab2f",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists all groups in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "ade2c322-54f8-4485-a964-cceaf0a75696",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/groups?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "groups"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"groups\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"voluptate_109\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"consequatb1\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:48:01.000Z",
+                              "updatedAt": "2026-07-28T01:48:01.000Z",
+                              "uid": "35240-ade2c322-54f8-4485-a964-cceaf0a75696"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:01.000Z",
+                          "updatedAt": "2026-07-28T01:48:01.000Z",
+                          "uid": "35240-bf25e4e0-21d5-4f32-aa10-64939830d663"
+                        },
+                        {
+                          "name": "Google Cloud Migration Center Create a group",
+                          "id": "0b052d2a-e162-4122-b696-77572c730459",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"ullamco5b4\": \"<string>\",\n    \"commodo_e\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/groups?groupId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "groups"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The ID to use for the group",
+                                  "key": "groupId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b1252d15-d832-4f18-be1c-97777b4c77d8",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "282f5a04-eec8-41b4-b4ae-602f0501ecd7",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new group in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "bff37886-4028-4648-a03c-626ab9ccd469",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"ullamco5b4\": \"<string>\",\n    \"commodo_e\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/groups?groupId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "groups"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The ID to use for the group",
+                                      "key": "groupId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:48:01.000Z",
+                              "updatedAt": "2026-07-28T01:48:01.000Z",
+                              "uid": "35240-bff37886-4028-4648-a03c-626ab9ccd469"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:01.000Z",
+                          "updatedAt": "2026-07-28T01:48:01.000Z",
+                          "uid": "35240-0b052d2a-e162-4122-b696-77572c730459"
+                        }
+                      ],
+                      "id": "11b54659-daf6-4982-8e69-f721c1231e46",
+                      "createdAt": "2026-07-28T01:48:01.000Z",
+                      "updatedAt": "2026-07-28T01:48:01.000Z",
+                      "uid": "35240-11b54659-daf6-4982-8e69-f721c1231e46"
+                    }
+                  ],
+                  "id": "518d5c0f-06a1-455d-9eaa-9fd7f247dd77",
+                  "createdAt": "2026-07-28T01:48:01.000Z",
+                  "updatedAt": "2026-07-28T01:48:01.000Z",
+                  "uid": "35240-518d5c0f-06a1-455d-9eaa-9fd7f247dd77"
+                }
+              ],
+              "id": "8fc94acc-8ddb-4fcd-9231-83b43c716622",
+              "createdAt": "2026-07-28T01:48:01.000Z",
+              "updatedAt": "2026-07-28T01:48:01.000Z",
+              "uid": "35240-8fc94acc-8ddb-4fcd-9231-83b43c716622"
+            }
+          ],
+          "id": "bdd5ac13-908b-447b-97df-e5213058a29c",
+          "createdAt": "2026-07-28T01:48:01.000Z",
+          "updatedAt": "2026-07-28T01:48:01.000Z",
+          "uid": "35240-bdd5ac13-908b-447b-97df-e5213058a29c"
+        }
+      ],
+      "id": "61b43832-db7e-4184-a252-7f443c0b320d",
+      "createdAt": "2026-07-28T01:48:01.000Z",
+      "updatedAt": "2026-07-28T01:48:01.000Z",
+      "uid": "35240-61b43832-db7e-4184-a252-7f443c0b320d"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://migrationcenter.googleapis.com/v1"
+    }
+  ]
+}

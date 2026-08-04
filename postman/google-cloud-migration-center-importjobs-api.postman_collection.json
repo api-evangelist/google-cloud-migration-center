@@ -1,0 +1,324 @@
+{
+  "info": {
+    "_postman_id": "73fe9f5d-2bd5-4e24-825d-d3da24646a2a",
+    "name": "Google Cloud Migration Center Google Migration Center Assets ImportJobs API",
+    "description": "The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:01.000Z",
+    "updatedAt": "2026-07-28T01:48:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-73fe9f5d-2bd5-4e24-825d-d3da24646a2a"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "importJobs",
+                      "item": [
+                        {
+                          "name": "Google Cloud Migration Center List import jobs",
+                          "id": "2d010cf7-b623-4bc8-844b-1b1aaaad75c7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/importJobs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "importJobs"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1360485d-9c5d-4273-bbb5-a9ea35193531",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "3926921f-f621-4508-9fa5-17e7a66d1d3f",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists all import jobs in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "ff7a8b2e-9992-4efa-bed9-c9e3b76d15d2",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/importJobs",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "importJobs"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"importJobs\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"state\": \"STATE_UNSPECIFIED\",\n      \"labels\": {\n        \"veniam178\": \"<string>\",\n        \"dolor_721\": \"<string>\",\n        \"cupidatat_8\": \"<string>\",\n        \"inf2\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"state\": \"FAILED\",\n      \"labels\": {\n        \"magnaca\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:48:02.000Z",
+                              "updatedAt": "2026-07-28T01:48:02.000Z",
+                              "uid": "35240-ff7a8b2e-9992-4efa-bed9-c9e3b76d15d2"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:02.000Z",
+                          "updatedAt": "2026-07-28T01:48:02.000Z",
+                          "uid": "35240-2d010cf7-b623-4bc8-844b-1b1aaaad75c7"
+                        },
+                        {
+                          "name": "Google Cloud Migration Center Create an import job",
+                          "id": "1ddd7df4-af50-4f70-a16a-5ecc5607ba99",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"state\": \"FAILED\",\n  \"labels\": {\n    \"veniam_79\": \"<string>\",\n    \"utc\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/importJobs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "importJobs"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a8fa037e-5178-47cc-9f8f-e636189be215",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "99d49156-9c6d-4db2-a534-f336a21c8023",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new import job."
+                          },
+                          "response": [
+                            {
+                              "id": "d6cc2a5f-298a-41ad-b6f3-925eeef481fc",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"state\": \"FAILED\",\n  \"labels\": {\n    \"veniam_79\": \"<string>\",\n    \"utc\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/importJobs",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "importJobs"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:48:02.000Z",
+                              "updatedAt": "2026-07-28T01:48:02.000Z",
+                              "uid": "35240-d6cc2a5f-298a-41ad-b6f3-925eeef481fc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:02.000Z",
+                          "updatedAt": "2026-07-28T01:48:02.000Z",
+                          "uid": "35240-1ddd7df4-af50-4f70-a16a-5ecc5607ba99"
+                        }
+                      ],
+                      "id": "99f23374-7157-41a8-9de4-93959a8b3ddd",
+                      "createdAt": "2026-07-28T01:48:02.000Z",
+                      "updatedAt": "2026-07-28T01:48:02.000Z",
+                      "uid": "35240-99f23374-7157-41a8-9de4-93959a8b3ddd"
+                    }
+                  ],
+                  "id": "534bba52-89c5-417b-8ca7-31f883093211",
+                  "createdAt": "2026-07-28T01:48:02.000Z",
+                  "updatedAt": "2026-07-28T01:48:02.000Z",
+                  "uid": "35240-534bba52-89c5-417b-8ca7-31f883093211"
+                }
+              ],
+              "id": "25362930-9ee4-4b01-918c-75af5cf6c0da",
+              "createdAt": "2026-07-28T01:48:02.000Z",
+              "updatedAt": "2026-07-28T01:48:02.000Z",
+              "uid": "35240-25362930-9ee4-4b01-918c-75af5cf6c0da"
+            }
+          ],
+          "id": "372823c6-e521-4895-b680-90991d1148d8",
+          "createdAt": "2026-07-28T01:48:02.000Z",
+          "updatedAt": "2026-07-28T01:48:02.000Z",
+          "uid": "35240-372823c6-e521-4895-b680-90991d1148d8"
+        }
+      ],
+      "id": "9a197d12-fbdb-4a7d-9998-b70e688d79f0",
+      "createdAt": "2026-07-28T01:48:02.000Z",
+      "updatedAt": "2026-07-28T01:48:02.000Z",
+      "uid": "35240-9a197d12-fbdb-4a7d-9998-b70e688d79f0"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://migrationcenter.googleapis.com/v1"
+    }
+  ]
+}
