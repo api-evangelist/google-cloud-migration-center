@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Migration Center Google Migration Center Assets PreferenceSets API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PreferenceSets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Migration Center List preference sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/preferenceSets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all preference sets in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Migration Center Create a preference set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://migrationcenter.googleapis.com/v1/projects/:projectId/locations/:location/preferenceSets",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new preference set for migration planning."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
