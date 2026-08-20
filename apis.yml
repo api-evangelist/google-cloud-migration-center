@@ -55,6 +55,8 @@ apis:
   humanURL: https://cloud.google.com/migration-center/docs
   baseURL: https://migrationcenter.googleapis.com
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -73,6 +75,8 @@ apis:
   humanURL: https://cloud.google.com/migration-center/docs
   baseURL: https://migrationcenter.googleapis.com
   tags:
+  - Import Jobs
+  tags_raw:
   - ImportJobs
   properties:
   - type: OpenAPI
