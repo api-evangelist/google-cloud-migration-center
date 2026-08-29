@@ -4,6 +4,18 @@ description: >-
   Google Cloud Migration Center is a unified platform that helps accelerate end-to-end cloud migration journeys from
   on-premises or other cloud environments to Google Cloud. It provides discovery, assessment, and planning tools to help
   organizations understand their existing infrastructure and plan optimal migration strategies.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
