@@ -87,7 +87,7 @@ apis:
   humanURL: https://cloud.google.com/migration-center/docs
   baseURL: https://migrationcenter.googleapis.com
   tags:
-  - Import Jobs
+  - ImportJobs
   tags_raw:
   - ImportJobs
   properties:
