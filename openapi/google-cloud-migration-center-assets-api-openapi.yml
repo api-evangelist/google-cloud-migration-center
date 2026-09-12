@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Migration Center Google Migration Center Assets API
   description: The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.
@@ -182,6 +182,15 @@ components:
           additionalProperties:
             type: string
           description: Generic asset attributes.
+    ListAssetsResponse:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Asset'
+        nextPageToken:
+          type: string
     MachineDetails:
       type: object
       description: Details of a machine asset.
@@ -207,15 +216,6 @@ components:
         platform:
           type: string
           description: Platform information.
-    ListAssetsResponse:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/Asset'
-        nextPageToken:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
