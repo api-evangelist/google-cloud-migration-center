@@ -81,26 +81,6 @@ apis:
     url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
   - type: JSONSchema
     url: json-schema/google-cloud-migration-center-asset-schema.json
-- aid: google-cloud-migration-center:google-cloud-migration-center-importjobs-api
-  name: Google Cloud Migration Center ImportJobs API
-  description: Operations for importing asset data from external sources
-  humanURL: https://cloud.google.com/migration-center/docs
-  baseURL: https://migrationcenter.googleapis.com
-  tags:
-  - Import Jobs
-  tags_raw:
-  - ImportJobs
-  properties:
-  - type: OpenAPI
-    url: openapi/google-cloud-migration-center-importjobs-api-openapi.yml
-  - type: Documentation
-    url: https://cloud.google.com/migration-center/docs/reference/rest
-  - type: Authentication
-    url: https://cloud.google.com/docs/authentication
-  - type: GettingStarted
-    url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
-  - type: JSONSchema
-    url: json-schema/google-cloud-migration-center-asset-schema.json
 - aid: google-cloud-migration-center:google-cloud-migration-center-preferencesets-api
   name: Google Cloud Migration Center PreferenceSets API
   description: Operations for managing migration preference configurations
@@ -111,6 +91,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/google-cloud-migration-center-preferencesets-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/migration-center/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/migration-center/docs/get-started-with-migration-center
+  - type: JSONSchema
+    url: json-schema/google-cloud-migration-center-asset-schema.json
+- aid: google-cloud-migration-center:google-cloud-migration-center-import-jobs-api
+  name: Google Cloud Migration Center Import Jobs API
+  description: Operations for importing asset data from external sources
+  humanURL: https://cloud.google.com/migration-center/docs
+  baseURL: https://migrationcenter.googleapis.com
+  tags:
+  - Import Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-migration-center-import-jobs-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/migration-center/docs/reference/rest
   - type: Authentication
