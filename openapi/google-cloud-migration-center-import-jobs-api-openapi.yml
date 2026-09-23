@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Migration Center Google Migration Center Assets Import Jobs API
+  title: Google Cloud Migration Center Google Migration Center…
   description: The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.
   version: v1
   contact:
@@ -13,7 +13,7 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: ImportJobs
+- name: Import Jobs
   description: Operations for importing asset data from external sources
 paths:
   /projects/{projectId}/locations/{location}/importJobs:
@@ -22,7 +22,7 @@ paths:
       summary: Google Cloud Migration Center List import jobs
       description: Lists all import jobs in the specified project and location.
       tags:
-      - ImportJobs
+      - Import Jobs
       parameters:
       - name: projectId
         in: path
@@ -46,7 +46,7 @@ paths:
       summary: Google Cloud Migration Center Create an import job
       description: Creates a new import job.
       tags:
-      - ImportJobs
+      - Import Jobs
       parameters:
       - name: projectId
         in: path
@@ -88,15 +88,6 @@ components:
               type: integer
             message:
               type: string
-    ListImportJobsResponse:
-      type: object
-      properties:
-        importJobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImportJob'
-        nextPageToken:
-          type: string
     ImportJob:
       type: object
       description: An import job represents a data import operation.
@@ -124,6 +115,15 @@ components:
           type: object
           additionalProperties:
             type: string
+    ListImportJobsResponse:
+      type: object
+      properties:
+        importJobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImportJob'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Migration Center Google Migration Center Assets Groups API
+  title: Google Cloud Migration Center Google Migration Center…
   description: The Migration Center API provides programmatic access to Google Cloud Migration Center for discovering, assessing, and planning migrations of on-premises infrastructure to Google Cloud. It enables management of assets, groups, import jobs, discovery clients, preference sets, and export jobs to support automated migration planning workflows.
   version: v1
   contact:
@@ -86,6 +86,29 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Group:
+      type: object
+      description: A group organizes a collection of assets for migration planning.
+      properties:
+        name:
+          type: string
+          description: Output only. The full resource name.
+        displayName:
+          type: string
+          description: User-friendly display name.
+        description:
+          type: string
+          description: Description of the group.
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
     Operation:
       type: object
       description: A long-running operation.
@@ -110,29 +133,6 @@ components:
             $ref: '#/components/schemas/Group'
         nextPageToken:
           type: string
-    Group:
-      type: object
-      description: A group organizes a collection of assets for migration planning.
-      properties:
-        name:
-          type: string
-          description: Output only. The full resource name.
-        displayName:
-          type: string
-          description: User-friendly display name.
-        description:
-          type: string
-          description: Description of the group.
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-        labels:
-          type: object
-          additionalProperties:
-            type: string
   securitySchemes:
     oauth2:
       type: oauth2
