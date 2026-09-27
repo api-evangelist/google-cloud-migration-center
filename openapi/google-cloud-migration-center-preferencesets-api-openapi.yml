@@ -73,15 +73,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    ListPreferenceSetsResponse:
-      type: object
-      properties:
-        preferenceSets:
-          type: array
-          items:
-            $ref: '#/components/schemas/PreferenceSet'
-        nextPageToken:
-          type: string
     PreferenceSet:
       type: object
       description: A set of preferences for migration planning.
@@ -123,6 +114,15 @@ components:
               - SAME_AS_SOURCE
               - MODERATE
               - AGGRESSIVE
+    ListPreferenceSetsResponse:
+      type: object
+      properties:
+        preferenceSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreferenceSet'
+        nextPageToken:
+          type: string
     Operation:
       type: object
       description: A long-running operation.

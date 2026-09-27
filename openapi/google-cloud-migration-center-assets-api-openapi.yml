@@ -155,6 +155,40 @@ paths:
           description: Successful response
 components:
   schemas:
+    ListAssetsResponse:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Asset'
+        nextPageToken:
+          type: string
+    MachineDetails:
+      type: object
+      description: Details of a machine asset.
+      properties:
+        uuid:
+          type: string
+          description: Machine unique identifier.
+        machineName:
+          type: string
+          description: Machine name.
+        coreCount:
+          type: integer
+          description: Number of CPU cores.
+        memoryMb:
+          type: integer
+          description: Memory size in megabytes.
+        diskCount:
+          type: integer
+          description: Number of disks.
+        totalDiskSizeGb:
+          type: integer
+          description: Total disk size in gigabytes.
+        platform:
+          type: string
+          description: Platform information.
     Asset:
       type: object
       description: An asset represents a resource in a customer environment.
@@ -182,40 +216,6 @@ components:
           additionalProperties:
             type: string
           description: Generic asset attributes.
-    MachineDetails:
-      type: object
-      description: Details of a machine asset.
-      properties:
-        uuid:
-          type: string
-          description: Machine unique identifier.
-        machineName:
-          type: string
-          description: Machine name.
-        coreCount:
-          type: integer
-          description: Number of CPU cores.
-        memoryMb:
-          type: integer
-          description: Memory size in megabytes.
-        diskCount:
-          type: integer
-          description: Number of disks.
-        totalDiskSizeGb:
-          type: integer
-          description: Total disk size in gigabytes.
-        platform:
-          type: string
-          description: Platform information.
-    ListAssetsResponse:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/Asset'
-        nextPageToken:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
