@@ -155,15 +155,6 @@ paths:
           description: Successful response
 components:
   schemas:
-    ListAssetsResponse:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/Asset'
-        nextPageToken:
-          type: string
     MachineDetails:
       type: object
       description: Details of a machine asset.
@@ -189,6 +180,15 @@ components:
         platform:
           type: string
           description: Platform information.
+    ListAssetsResponse:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Asset'
+        nextPageToken:
+          type: string
     Asset:
       type: object
       description: An asset represents a resource in a customer environment.

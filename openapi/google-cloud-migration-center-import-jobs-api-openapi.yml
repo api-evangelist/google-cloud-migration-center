@@ -73,6 +73,30 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Operation:
+      type: object
+      description: A long-running operation.
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+    ListImportJobsResponse:
+      type: object
+      properties:
+        importJobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImportJob'
+        nextPageToken:
+          type: string
     ImportJob:
       type: object
       description: An import job represents a data import operation.
@@ -100,30 +124,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    ListImportJobsResponse:
-      type: object
-      properties:
-        importJobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImportJob'
-        nextPageToken:
-          type: string
-    Operation:
-      type: object
-      description: A long-running operation.
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
   securitySchemes:
     oauth2:
       type: oauth2
