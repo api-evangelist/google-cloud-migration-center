@@ -73,6 +73,21 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Operation:
+      type: object
+      description: A long-running operation.
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
     ListPreferenceSetsResponse:
       type: object
       properties:
@@ -123,21 +138,6 @@ components:
               - SAME_AS_SOURCE
               - MODERATE
               - AGGRESSIVE
-    Operation:
-      type: object
-      description: A long-running operation.
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
   securitySchemes:
     oauth2:
       type: oauth2

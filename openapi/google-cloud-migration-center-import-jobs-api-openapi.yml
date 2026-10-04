@@ -88,15 +88,6 @@ components:
               type: integer
             message:
               type: string
-    ListImportJobsResponse:
-      type: object
-      properties:
-        importJobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImportJob'
-        nextPageToken:
-          type: string
     ImportJob:
       type: object
       description: An import job represents a data import operation.
@@ -124,6 +115,15 @@ components:
           type: object
           additionalProperties:
             type: string
+    ListImportJobsResponse:
+      type: object
+      properties:
+        importJobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImportJob'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
