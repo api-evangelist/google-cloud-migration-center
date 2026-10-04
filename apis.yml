@@ -36,7 +36,6 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 type: Index
 tags:
-  - Assessment
   - Cloud Migration
   - Discovery
   - Infrastructure
@@ -163,3 +162,5 @@ maintainers:
     email: kin@apievangelist.com
 x-parent: google-cloud-platform
 x-relationship: product
+x-tags-removed:
+- Assessment
