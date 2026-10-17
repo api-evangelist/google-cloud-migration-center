@@ -86,6 +86,29 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Group:
+      type: object
+      description: A group organizes a collection of assets for migration planning.
+      properties:
+        name:
+          type: string
+          description: Output only. The full resource name.
+        displayName:
+          type: string
+          description: User-friendly display name.
+        description:
+          type: string
+          description: Description of the group.
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
     Operation:
       type: object
       description: A long-running operation.
@@ -110,29 +133,6 @@ components:
             $ref: '#/components/schemas/Group'
         nextPageToken:
           type: string
-    Group:
-      type: object
-      description: A group organizes a collection of assets for migration planning.
-      properties:
-        name:
-          type: string
-          description: Output only. The full resource name.
-        displayName:
-          type: string
-          description: User-friendly display name.
-        description:
-          type: string
-          description: Description of the group.
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-        labels:
-          type: object
-          additionalProperties:
-            type: string
   securitySchemes:
     oauth2:
       type: oauth2
